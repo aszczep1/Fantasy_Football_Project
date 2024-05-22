@@ -87,3 +87,19 @@ For each position group, there were six different models run to try to find the 
 - XGBoost 
 - Gradient Boosting 
 - Voting Regressor
+
+### Packages used: 
+- Pandas
+- Seaborn
+- Matplotlib
+- Numpy
+- Warnings
+- Scikit-learn
+- Statsmodles
+- Math
+- Statistics
+- xgboost
+- Requests
+- BeautifulSoup
+- Selenium
+- webdriver_manager
