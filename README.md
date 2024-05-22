@@ -1,12 +1,13 @@
 # Fantasy_Football_Project
 
-This project aims to accurately predict fantasy points for NFL players based on data from 1999-2023. It looks to predict the points per player for the 2023 season as its testing data. To obtain accurate predictions, we built a linear regression model and several machine-learning models based on the 8,714 data points that were originally collected from, <a href = “https://github.com/nflverse/nflverse-data/releases/tag/player_stats”>Github</a>. Although this begins with more players, a cap was put on the yards a player needed to be included in the dataset. Orthogonal data was also collected to better predict fantasy scores at the beginning of an NFL season. Different datasets were created based on position. Preprocessing ended in a Quarterback dataset, a Wide Receiver/Tight End dataset, and a Runningback dataset. Each of these had a few different variables and had different success with the models. The quarterback dataset had the most success with the XGBoost model, with an RMSE of 103.51 and the top three features being average fantasy points in the year prior, starter or backup at the beginning of the season, and severe injury before the season. The lack of predictability here can most likely be fixed with more data points, some feature transformation, and cross-validation. The wide receiver and tight end model had the most success overall. Surprisingly, its best model was the multiple regression model with an RMSE of 56.59 and an r-squared value of .562. Although, this dataset had the most consistent RMSE among all the models. This model may be improved through cross-validation and feature transformation. It is not a surprise that this dataset had the best predictability because it had the most data points. The running back data frame had more predictive power than the quarterback data. However, it was still not very predictive. The best model here was also the multiple regression with an RMSE of 81.9 for the testing set. However, there was a RMSE of 62.73 for the training set. This indicates that our model was overfitting. This can be fixed by running a ridge or lasso regression on the dataset. The Gradient Boosting algorithm was not far behind with an RMSE of 82.03 and its most important features were average fantasy points the year prior, years in the league, and rushing epa. The problems with these models could be fixed by adding data points, fixing overfitting, and feature transformation. Overall, as shown in the bar graph visualizations of the top ten players for all the categories these predictions held some weight to them. The highest inaccuracies came from when a player got hurt during the season. 
-Data collection: 
+This project aims to accurately predict fantasy points for NFL players based on data from 1999-2023. It looks to predict the points per player for the 2023 season as its testing data. To obtain accurate predictions, we built a linear regression model and several machine-learning models based on the 8,714 data points that were originally collected from, [Github](https://github.com/nflverse/nflverse-data/releases/tag/player_stats). Although this begins with more players, a cap was put on the yards a player needed to be included in the dataset. Orthogonal data was also collected to better predict fantasy scores at the beginning of an NFL season. Different datasets were created based on position. Preprocessing ended in a Quarterback dataset, a Wide Receiver/Tight End dataset, and a Runningback dataset. Each of these had a few different variables and had different success with the models. The quarterback dataset, only having 1,488 data points, had the most success with the XGBoost model, with an RMSE of 103.51 and the top three features being average fantasy points in the year prior, starter or backup at the beginning of the season, and severe injury before the season. The lack of predictability here can most likely be fixed with more data points, some feature transformation, and cross-validation. The wide receiver and tight end model had the most success overall. Surprisingly, its best model was the multiple regression model with an RMSE of 56.59 and an r-squared value of .562. Although, this dataset had the most consistent RMSE among all the models. This model may be improved through cross-validation and feature transformation. It is not a surprise that this dataset had the best predictability because it had the most data points with 4,842 data points. The running back data frame had more predictive power than the quarterback data, having 2,384 data points. However, it was still not very predictive. The best model here was also the multiple regression with an RMSE of 81.9 for the testing set. However, there was a RMSE of 62.73 for the training set. This indicates that our model was overfitting. This can be fixed by running a ridge or lasso regression on the dataset. The Gradient Boosting algorithm was not far behind with an RMSE of 82.03 and its most important features were average fantasy points the year prior, years in the league, and rushing epa. The problems with these models could be fixed by adding data points, fixing overfitting, and feature transformation. Overall, as shown in the bar graph visualizations of the top ten players for all the categories these predictions held some weight to them. The highest inaccuracies came from when a player got hurt during the season. 
+
+### Data collection: 
 #### Demographic information
  _Collected by: Alex Szczepanski_
 This data sought to pull the height, weight, college, high school, high school state, place of birth, draft team, draft number/round, draft year, and birthday of every player in the dataset. 
 
-The data was collected using Selenium and BeautifulSoup in Python. The code used for this can be found here. 
+The data was collected using Selenium and BeautifulSoup in Python. The code used for this can be found [here]. 
 
 Source:  https://www.pro-football-reference.com/
 
@@ -14,9 +15,9 @@ Source:  https://www.pro-football-reference.com/
 #### Injury data
 _Collected by: Maggie Conners, Brett Gaebel, Conor Hughes, Michael Leahey, Michael Sternbach, and  Alex Szczepanski_
 
-This data collection sought to pull information on if the player was injured the prior season, injury type, injury severity, and if it was season-ending
+This data collection sought to pull information on if the player was injured the prior season, injury type, injury severity, and if it was season-ending.
 
-The data was collected by manually searching the internet and using various resources like Draft Sharks, Rotowire, Wikipedia, and other news outlets 
+The data was collected by manually searching the internet and using various resources like Draft Sharks, Rotowire, Wikipedia, and other news outlets. 
 
 
 #### Coaching data 
@@ -24,14 +25,14 @@ _Collected by: Conor Hughes_
 
 This data sought to collect the coach's name, team, season, first year with the team or not, years coached, wins, losses, and ties. 
 
-The data was manually collected from Wikipedia
+The data was manually collected from Wikipedia.
 
 #### Starter Data (Quarterbacks)
 _Collected by: Michael Leahey_
 
 This binary variable sought to teach the algorithm if a quarterback was named a starter at the beginning of the season. This way first-year starters are recognized by the algorithms. 
 
-This data was collected manually across different new sites
+This data was collected manually across different news sites.
 
 
 ### Variable creation, cleaning, and preprocessing
