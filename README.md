@@ -7,7 +7,7 @@ This project aims to accurately predict fantasy points for NFL players based on 
  _Collected by: Alex Szczepanski_
 This data sought to pull the height, weight, college, high school, high school state, place of birth, draft team, draft number/round, draft year, and birthday of every player in the dataset. 
 
-The data was collected using Selenium and BeautifulSoup in Python. The code used for this can be found [here]. 
+The data was collected using Selenium and BeautifulSoup in Python. The code used for this can be found [here](./Scrape_Info/Clean_Scraping_File.ipynb). 
 
 Source:  https://www.pro-football-reference.com/
 
